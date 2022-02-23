@@ -8,7 +8,7 @@
     <title>To do app</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="app.css">
 
 </head>
@@ -20,25 +20,26 @@
     <div>
         <form action="" id="form-new-item">
             <input type="text" id="item-name">
-            <button>Add new item</button>
+            <button id="addButton">Add new item
+                <img id="addImg" src="add.png" alt="add symbol">
+            </button>
         </form>
-        <div class="column col-1" id="todo">
-            
+        <div class="column col-1" id="todo">            
             <h4>To do</h4>
-            <ul >
-                <li class="list-item" draggable="true">App</li>
+            <ul id="todo-list">
+                <li draggable="true">App</li>
             </ul>
         </div>      
-        <div class="column" id="doing">
+        <div class="column col-2" id="doing">
             <h4>Doing</h4>
-            <ul >
-                <li class="list-item">App</li>
+            <ul id="doing-list">
+                <li draggable="true">App</li>
             </ul>
         </div>
-        <div class="column" id="doit">
+        <div class="column col-3" id="done">
             <h4>Doit</h4>
-            <ul >
-                <li class="list-item">Not App</li>
+            <ul id="done-list">
+                <li draggable="true">Not App</li>
             </ul>
         </div>
     </div> 

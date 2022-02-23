@@ -1,5 +1,5 @@
 body {
-  background-color: white;
+  background-color: lightgrey;
 }
 
 h1 {
@@ -12,8 +12,7 @@ h1 {
   margin: 0.1rem;
 }
 
-h3
-{
+h3 {
   color: black;
   font-family: 'Montserrat', sans-serif;
   font-weight: bolder;
@@ -22,25 +21,83 @@ h3
   font-size: 1.5rem;
 }
 
-div .column
-{
-  font-family: Arial, Helvetica, sans-serif;
-  display: inline-block;  
-  background-color: lightblue;
-  vertical-align: top;  
-  align-items: center;
-  width: 28%;
-  height: 500px;
-  margin: 1%;  
-  border-radius:15px;
-  padding: 1em;
-
+h4 {
+  text-align: center;
+  font-size: 2.5em;
+  padding: 2%;
+  margin: 0%;
 }
 
 
-
-form
-{
+form {
+  
   text-align: center;
   margin: 1em;
+  
+}
+
+input
+{
+  width: 10%;
+  height: 1.5em;
+  border-radius: 5px;
+  background-color: rgb(235, 235, 235);
+}
+
+#addButton
+{
+  height:35px;
+  border-radius: 5px;
+}
+#addImg
+{
+  width: 15px;  
+  height: 15px;
+  vertical-align: middle;
+}
+
+@media (min-width:300px) {
+  div .column {
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+    background-color: lightblue;
+    vertical-align: top;
+    align-items: center;
+    width:90%;
+    height: 500px;
+    margin: 1%;
+    border-radius: 15px;
+    padding: 1em;
+  }
+}
+
+
+@media (min-width:900px) {
+  div .column {
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+    background-color: lightblue;
+    vertical-align: top;
+    align-items: center;
+    width:40%;
+    height: 500px;
+    margin: 1%;
+    border-radius: 15px;
+    padding: 1em;
+  }
+}
+@media (min-width:1200px) {
+  div .column {
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+    background-color: lightblue;
+    vertical-align: top;
+    align-items: center;
+    width:28%;
+    height: 500px;
+    margin: 1%;
+    border-radius: 15px;
+    padding: 1em;
+    box-shadow: -5px 5px;
+  }
 }

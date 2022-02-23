@@ -1,72 +1,52 @@
-const todo = document.querySelector("#todo");
-const doing = document.querySelector("#doing");
-const doit = document.querySelector("#doit");
+const todoList = document.querySelector("#todo-list");
+const doingList = document.querySelector("#doing-list");
+const doneList = document.querySelector("#done-list");
 
 const form = document.querySelector("#form-new-item");
 const item = document.querySelector("#item-name");
 
-let elements = document.querySelectorAll("#list-item");
-
 let dragItem;
 
-todo.addEventListener("click", function(e){    
-    if (e.target.tagName === 'LI') {
-        const i = e.target;
-        //doing.appendChild(i);
-        console.log(`test: ${e.target}`)
-    }
+
+addEventListener("dragstart", function(e){
+    console.table(`test: ${e.target}`)   
+    if(e.target.tagName === 'LI')
+    {
+        dragItem = e.target;
+    }    
 })
 
-todo.addEventListener("dragstart", function (e) {
-    console.table(`test: ${e.target}`)
-    if (e.target.tagName === 'LI') {
-        console.log(e.target.value);
-    }
-    dragItem = e.target;
-})
-
-
-
-doing.addEventListener("click", function (e) {
-    if (e.target.tagName === 'LI') {
-        const i = e.target;
-        doit.appendChild(i);
-    }
-})
-
-doing.addEventListener("dragenter", function (e) {
-    console.log("asd")
-})
-
-doing.addEventListener("dragover", function (e) {
+addEventListener("dragover", function (e) {
     e.preventDefault();
     console.log("dragover")
 })
 
-doing.addEventListener("drop", function (e) {
-    console.log(e,"drop")
-    doing.appendChild(dragItem);
-})
-
-doit.addEventListener("click", function (e) {
-    
-    if(e.target.tagName === 'LI' && e.target.classList.contains("checked"))
+addEventListener("drop", function (e) {
+    console.log(e.target.classList, "drop")
+    for(let i = 1; i<4; i++)
     {
-        doit.removeChild(e.target);
+        if(e.target.classList.contains(`col-${i}`))        
+        {            
+            console.log("COLUMNAAAAAAA")
+            e.target.children[1].appendChild(dragItem);
+           
+        }
     }
-    else if (e.target.tagName === 'LI') {
-        const i = e.target;
-        i.classList.toggle('checked');
-    }
+    
+    
 })
 
 form.addEventListener("submit", function (e) {
-    e.preventDefault();
+    e.preventDefault();    
     const itemName = item.value
     console.log(itemName.value);
-    const newLI = document.createElement("LI");
-    newLI.innerText = itemName;
-
-    todo.appendChild(newLI);
-    item.value = "";
+    if(item.value)
+    {
+        const newLI = document.createElement("LI");
+        newLI.innerText = itemName;
+        newLI.draggable = true;
+        todoList.appendChild(newLI);
+        item.value = "";
+    }
+    
 })
