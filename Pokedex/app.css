@@ -27,10 +27,12 @@ li
     border: 2px solid black;
 }
 
-.data
+.info
 {
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.2s;
+    display: none;
 }
 
+.info-active
+{
+    display: inline-block;
+}
