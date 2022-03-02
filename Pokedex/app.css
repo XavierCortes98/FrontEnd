@@ -1,0 +1,36 @@
+body
+{
+    background-color: antiquewhite;
+}
+
+div .pokemon
+{        
+    display: inline-block;
+    width: 100%;      
+    background-color: aliceblue;
+    border-radius: 50%;
+}
+
+div p
+{    
+    font-family: 'Press Start 2P', cursive; 
+    text-transform: uppercase;
+    text-align: center;   
+}
+
+li
+{
+    display: inline-block;    
+    list-style: none;
+    width: 20%;
+    margin: 5%;
+    border: 2px solid black;
+}
+
+.data
+{
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s;
+}
+
