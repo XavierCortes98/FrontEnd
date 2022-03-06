@@ -16,16 +16,16 @@ let lastTarget;
 
 
 
-function onClickDiv(e){   
-   console.log(e.currentTarget.children[2]);
+function onClickDiv(e) {
+    console.log(e.currentTarget.children[2]);
 
-   if(lastTarget !== undefined && lastTarget!==e.currentTarget.children[2]){
-    lastTarget.classList.toggle("info-active");        
-   }
-   e.currentTarget.children[2].classList.toggle("info-active");
-   lastTarget = e.currentTarget.children[2];
-  
-    
+    if (lastTarget !== undefined && lastTarget !== e.currentTarget.children[2]) {
+        if (lastTarget.classList.contains("info-active")) {
+            lastTarget.classList.toggle("info-active");
+        }
+    }
+    e.currentTarget.children[2].classList.toggle("info-active");
+    lastTarget = e.currentTarget.children[2];
 }
 
 async function basePokedex() {
@@ -34,7 +34,7 @@ async function basePokedex() {
         addPokemons(res.data);
     }
     var classname = document.getElementsByClassName("data")
-    
+
     for (let index = 0; index < classname.length; index++) {
         classname[index].addEventListener('click', onClickDiv)
     }
@@ -53,9 +53,9 @@ function addPokemons(data) {
 
     li.innerHTML = `
     <div class="data">
-        <div>
+        <picture>
             <img class="pokemon" src="${data.sprites.front_default}" alt="">
-        </div>
+        </picture>
         <div>
             <p>${data.name}</p>
         </div>

@@ -1,38 +1,46 @@
-body
-{
+body {
     background-color: antiquewhite;
 }
 
-div .pokemon
-{        
+.data{
+    align-items: top;
+}
+
+div .pokemon {
     display: inline-block;
-    width: 100%;      
+    width: 100%;
     background-color: aliceblue;
     border-radius: 50%;
 }
 
-div p
-{    
-    font-family: 'Press Start 2P', cursive; 
+div p {    
+    font-family: 'Press Start 2P', cursive;
     text-transform: uppercase;
     text-align: center;   
 }
 
-li
-{
-    display: inline-block;    
+li {
+    display: inline-block;
     list-style: none;
     width: 20%;
     margin: 5%;
     border: 2px solid black;
 }
 
-.info
-{
-    display: none;
+.info {
+    visibility: hidden;
+    opacity: 0;
+    height: 0px;
+    width: 0px;
+    transition: all 0.2s;
+    
 }
 
-.info-active
-{
-    display: inline-block;
+.info-active {
+    visibility: visible;
+    opacity: 1;
+    height: 50px;
+    width: 100%;
+    
 }
+
