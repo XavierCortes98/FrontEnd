@@ -1,46 +1,37 @@
 body {
     background-color: antiquewhite;
+    height: 100%;
+    overflow: hidden;
 }
 
-.data{
-    align-items: top;
+#list ul
+{       
+    overflow-y: scroll;
+    margin: 2%;      
 }
 
-div .pokemon {
-    display: inline-block;
-    width: 100%;
-    background-color: aliceblue;
-    border-radius: 50%;
+li
+{
+    list-style-type: none;
+    font-family: 'Press Start 2P', cursive;  
+   
 }
 
-div p {    
-    font-family: 'Press Start 2P', cursive;
-    text-transform: uppercase;
-    text-align: center;   
+#wrapper
+{
+    display: flex;    
+    background-color: white;
+    justify-content: space-around;
 }
 
-li {
-    display: inline-block;
-    list-style: none;
-    width: 20%;
-    margin: 5%;
-    border: 2px solid black;
+#left
+{    
+    background-color: antiquewhite;
+    width: 40%;
 }
 
-.info {
-    visibility: hidden;
-    opacity: 0;
-    height: 0px;
-    width: 0px;
-    transition: all 0.2s;
-    
+div #list
+{    
+    background-color: aquamarine;  
+    max-height: 85%;
 }
-
-.info-active {
-    visibility: visible;
-    opacity: 1;
-    height: 50px;
-    width: 100%;
-    
-}
-

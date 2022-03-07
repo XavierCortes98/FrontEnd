@@ -4,9 +4,9 @@ const searchButton = document.querySelector("#searchButton");
 
 const list = document.querySelector("#list");
 
-function Pokemon(number) {
+function Pokemon(number, name) {
     this.number = number;
-    // this.name = name;
+    this.name = name;
     // this.type = type;
     // this.imgs = imgs;
 }
@@ -29,7 +29,7 @@ function onClickDiv(e) {
 }
 
 async function basePokedex() {
-    for (let i = 1; i < 10; i++) {
+    for (let i = 1; i < 151; i++) {
         const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`);
         addPokemons(res.data);
     }
@@ -48,26 +48,16 @@ function click(e) {
 
 function addPokemons(data) {
     const li = document.createElement('li');
-    //li.addEventListener("click", click);
-
-
+    
     li.innerHTML = `
-    <div class="data">
-        <picture>
-            <img class="pokemon" src="${data.sprites.front_default}" alt="">
-        </picture>
-        <div>
-            <p>${data.name}</p>
-        </div>
-        <div class="info">
-            <p>${data.id}</p>
-        </div>  
-    </div>`;
+    <div>
+        <p>${data.id} ${data.name}</p>
+    </div>`
 
-    let pkmn = new Pokemon(data.name)
+    let pkmn = new Pokemon(data.name, data.id)
     pokemons.push(pkmn);
 
-    list.appendChild(li);
+    list.children[0].appendChild(li);
 }
 
 // searchForm.addEventListener("submit", async function (e) {
