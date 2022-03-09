@@ -1,32 +1,35 @@
-const searchForm = document.querySelector("#searchForm");
-const textInput = document.querySelector("#textInput");
-const searchButton = document.querySelector("#searchButton");
-
+const downButton = document.querySelector("#downButton");
 const list = document.querySelector("#list");
+const left = document.querySelector("#left");
 
-function Pokemon(number, name) {
+function Pokemon(number, name, imgs) {
     this.number = number;
     this.name = name;
     // this.type = type;
-    // this.imgs = imgs;
+     this.imgs = imgs;
+}
+
+function padNumber(num) {
+    num = ('00' + num).slice(-3)
+    return num
 }
 
 let pokemons = [];
 let lastTarget;
 
+function scroll(e) {
+
+    list.scroll({
+        top: list.scrollTop + 10,
+        left: 0,
+        behavior: 'smooth'
+    });
 
 
-function onClickDiv(e) {
-    console.log(e.currentTarget.children[2]);
-
-    if (lastTarget !== undefined && lastTarget !== e.currentTarget.children[2]) {
-        if (lastTarget.classList.contains("info-active")) {
-            lastTarget.classList.toggle("info-active");
-        }
-    }
-    e.currentTarget.children[2].classList.toggle("info-active");
-    lastTarget = e.currentTarget.children[2];
 }
+
+downButton.addEventListener("click", scroll);
+downButton.addEventListener("mousedown", scroll);
 
 async function basePokedex() {
     for (let i = 1; i < 151; i++) {
@@ -40,31 +43,40 @@ async function basePokedex() {
     }
 }
 
-function click(e) {
-    console.log(e.target);
-    // e.target.children[2].style.maxHeight = e.target.children[2].scrollHeight + 'px';
-
-}
-
 function addPokemons(data) {
-    const li = document.createElement('li');
-    
-    li.innerHTML = `
-    <div>
-        <p>${data.id} ${data.name}</p>
+    const div = document.createElement('div');    
+    div.addEventListener("click", (e) => {        
+
+        if (lastTarget === undefined) {
+            e.currentTarget.children[0].classList.add("border");
+            console.log(e.currentTarget.children[0]);
+            lastTarget = e.currentTarget
+        }
+        else if (lastTarget) {
+            lastTarget.children[0].classList.remove("border");
+            e.currentTarget.children[0].classList.add("border");
+            lastTarget = e.currentTarget
+
+        }
+    })
+    div.innerHTML = `
+    <div class="info">     
+        <img src="${data.sprites.front_default}" alt="">    
+         <p> ${padNumber(data.id)} ${data.name}</p>
     </div>`
-
-    let pkmn = new Pokemon(data.name, data.id)
+    let pkmn = new Pokemon(data.id, data.name, data.sprites)
     pokemons.push(pkmn);
+    
+    list.children[1].appendChild(div);
 
-    list.children[0].appendChild(li);
+    //console.log(pokemons[0].imgs.front_default)
+
+    // left.innerHTML = `
+    // <div>  
+    //     <h2>${pokemons[0].name}</h2>   
+    //     <img src="${pokemons[0].imgs.front_default}" alt="">             
+    // </div>`
+
 }
-
-// searchForm.addEventListener("submit", async function (e) {
-//     e.preventDefault();
-//     let pokemonName = textInput.value;
-//     const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);   
-//     addPokemons(res); 
-// });
 
 basePokedex();

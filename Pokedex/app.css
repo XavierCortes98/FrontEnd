@@ -1,37 +1,92 @@
-body {
-    background-color: antiquewhite;
+html {
+    background-color: rgb(233, 182, 115);
     height: 100%;
-    overflow: hidden;
 }
 
-#list ul
-{       
-    overflow-y: scroll;
-    margin: 2%;      
+#header {
+    display: flex;
+    position: relative;
+    color: white;
+    width: 100%;
+    height: 100vh;
+    margin-top: -1%;
+    right: 5%;
+    bottom: 0%;
+    text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+    background-color: rgba(255, 0, 0, 0.856);
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+    border-bottom: 10px solid black;
+    /* box-shadow: 0 40px 2px -2px rgb(128, 128, 128); */
+    
+    box-shadow: inset 0em -4em rgba(73, 0, 0, 0.486), inset 0em -3em rgb(119, 1, 1);
+    
 }
 
-li
-{
+#header h1 {
+    font-family: 'Press Start 2P', cursive;
+
+}
+
+div {
     list-style-type: none;
-    font-family: 'Press Start 2P', cursive;  
-   
+    font-family: 'Press Start 2P', cursive;
+    padding: 1.5em;
+    margin: 1em;
 }
 
-#wrapper
-{
+.border {
+    border: 5px solid red;
+    border-radius: 30%;    
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+
+div #verticalBar {
     display: flex;    
+    background-color: red;
+    
+}
+
+#downButton button {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+}
+
+#wrapper {
+    display: flex;
     background-color: white;
     justify-content: space-around;
+    flex-direction: row;
+
 }
 
-#left
-{    
+#left {
     background-color: antiquewhite;
     width: 40%;
 }
 
-div #list
-{    
-    background-color: aquamarine;  
-    max-height: 85%;
+#list {
+    display: flex;
+    flex-direction: row;
+    max-height: 60vh;
+    border: 3px solid black;
+    border-radius: 5%;
+    z-index: 3;
+    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    
+}
+
+
+#list::-webkit-scrollbar {
+    display: none;
 }
