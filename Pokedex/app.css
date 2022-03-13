@@ -32,8 +32,6 @@ div {
 
 }
 
-
-
 .border {
     border: 5px solid red;
     border-radius: 30%;
@@ -74,11 +72,8 @@ div #verticalBar {
 }
 
 #left {
-    display: block;
-    
-    width: 40%;
-    justify-content: center;
-    
+    display: block;    
+    width: 40%;   
 }
 
 #list {
@@ -92,7 +87,6 @@ div #verticalBar {
     overflow: hidden;
     overflow-y: scroll;
     scrollbar-width: none;
-
 }
 
 #list::-webkit-scrollbar {
@@ -106,13 +100,15 @@ div #verticalBar {
     border: 3px solid black;
     border-radius: 3px;
     width: 50%;
+    margin-left: 25%;
     text-transform: uppercase;
     justify-content: center;
-    height: fit-content;
-
     box-shadow:inset 20px 0px rgb(232,48,48), inset -20px 0px rgba(232,48,48) , inset 0em 5px rgba(248,152,160), inset 25px 0px rgb(248,152,160), inset -25px 0px rgb(248,152,160);
 }
 .imgPkmn{
     display: block;  
     width: 100%;    
+}
+.imgPkmn img{
+    height: 375px;
 }

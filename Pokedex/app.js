@@ -8,7 +8,7 @@ function Pokemon(number, name, imgs) {
     this.number = number;
     this.name = name;
     // this.type = type;
-     this.imgs = imgs;
+    this.imgs = imgs;
 }
 
 function padNumber(num) {
@@ -19,7 +19,16 @@ function padNumber(num) {
 let pokemons = [];
 let lastTarget;
 
+function getChildElementIndex(node) {
+    return Array.prototype.indexOf.call(node.parentNode.children, node);
+  }
 
+function changeInfo(e){
+    console.log( getChildElementIndex(e));
+    imgPkmn.children[0].src = pokemons[getChildElementIndex(e)].imgs.front_default;
+    displayPkmn.children[0].innerText = pokemons[getChildElementIndex(e)].name;
+
+}
 
 async function basePokedex() {
     for (let i = 1; i < 151; i++) {
@@ -60,5 +69,6 @@ function divEventListener(e)
         lastTarget = e.currentTarget
 
     }
+    changeInfo(e.currentTarget);
 }
 basePokedex();
