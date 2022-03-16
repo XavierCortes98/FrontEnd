@@ -1,7 +1,10 @@
-body{
-    background-image: url("bgxl.png");    
-    background-size:contain;
+html {
+    background-image: url("bgxl.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
 }
+
 
 div {
     list-style-type: none;
@@ -18,13 +21,13 @@ div {
     right: 0%;
     bottom: 0%;
     text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
-    background-color: rgb(232,48,48);
+    background-color: rgb(232, 48, 48);
     height: 100px;
     align-items: center;
     justify-content: center;
     font-size: larger;
     border-bottom: 10px solid black;
-    box-shadow: inset 0em -2em rgb(144,16,32), inset 0em -3em rgb(192,32,40) ;
+    box-shadow: inset 0em -2em rgb(144, 16, 32), inset 0em -3em rgb(192, 32, 40);
 }
 
 #header h1 {
@@ -41,59 +44,49 @@ div {
     display: flex;
     align-items: center;
     background-color: white;
+    box-shadow: -5px 5px 2px rgb(155, 155, 155), 
+                5px -5px 2px rgb(155, 155, 155);
 }
 
-div #verticalBar {
-    display: flex;    
+#verticalBar {
+    display: flex;
     position: relative;
-    background-color: rgb(232,48,48);
-    box-shadow: inset -0.5em 0em rgb(248,152,160);
-    padding: 46px;
-    margin: -24px;
-    width: 10px;
-    height: 100%;
-    overflow-y: hidden;
-    height:inherit;
-
+    margin-right: 4em;
 }
 
-#downButton button {
+#verticalBar div{
     position: absolute;
-    bottom: 10%;
-    right: 10%;
+    width: 5vw;
+    left: -35px;
+    bottom: -35px;
+    background-color: rgb(232, 48, 48);
+    box-shadow: inset -0.5em 0em rgb(248, 152, 160);
+    height: 120%;
 }
 
 #wrapper {
     display: flex;
-    
     justify-content: space-around;
     flex-direction: row;
-
+    overflow-x: hidden;
 }
 
 #left {
-    display: block;    
-    width: 40%;   
+    display: block;
+    width: 40%;
 }
 
 #list {
     display: flex;
     flex-direction: row;
-    max-height: 60vh;
+    max-height: 80vh;
     background-color: white;
     border: 3px solid black;
     border-radius: 5%;
-    z-index: 3;
-    overflow: hidden;
-    overflow-y: scroll;
-    scrollbar-width: none;
+    overflow:hidden;   
 }
 
-#list::-webkit-scrollbar {
-    display: none;
-}
-
-.displayPkmn{
+.displayPkmn {
     background-color: white;
     display: flex;
     border-style: inset;
@@ -103,12 +96,42 @@ div #verticalBar {
     margin-left: 25%;
     text-transform: uppercase;
     justify-content: center;
-    box-shadow:inset 20px 0px rgb(232,48,48), inset -20px 0px rgba(232,48,48) , inset 0em 5px rgba(248,152,160), inset 25px 0px rgb(248,152,160), inset -25px 0px rgb(248,152,160);
+    box-shadow: inset 20px 0px rgb(232, 48, 48), inset -20px 0px rgba(232, 48, 48), inset 0em 5px rgba(248, 152, 160), inset 25px 0px rgb(248, 152, 160), inset -25px 0px rgb(248, 152, 160);
 }
-.imgPkmn{
-    display: block;  
-    width: 100%;    
+
+.imgPkmn {
+    display: flex;
+    width: 100%;
+    height: 500px;
+    justify-content: center;
 }
-.imgPkmn img{
+
+.imgPkmn img {
     height: 375px;
+    align-self: center;
 }
+
+#divs{
+    overflow-y: scroll; 
+      
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background:  rgb(88,112,248);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(32,48,152);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(72, 87, 185);
+  }
