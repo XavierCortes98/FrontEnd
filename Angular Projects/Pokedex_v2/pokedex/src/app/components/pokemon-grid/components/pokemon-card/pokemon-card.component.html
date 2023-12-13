@@ -1,0 +1,21 @@
+<div
+  class="d-flex flex-column align-items-center img-thumbnail col-12 h-100"
+  *ngIf="card"
+>
+  <picture
+    class="d-flex justify-content-center w-100"
+    style="background-color: gray"
+  >
+    <img
+      class="img-fluid rounded w-100"
+      style="background-color: transparent"
+      src="{{ card.sprite }}"
+      alt=""
+    />
+  </picture>
+  <p>{{ card.order }}</p>
+  <p>{{ card.name }}</p>
+  <div *ngFor="let item of card.types">
+    <p>{{ item.name }}</p>
+  </div>
+</div>
