@@ -24,4 +24,22 @@ export class PokemonCardComponent implements OnInit {
         this.card = data;
       });
   }
+
+  getOrder(pokemonNumber: number): string {
+    return String(pokemonNumber).padStart(4, '0');
+  }
+
+  getCaps(pokemonName: string): string {
+    if (pokemonName) {
+      return (
+        pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1).toLowerCase()
+      );
+    } else return '';
+  }
+
+  getTypeCaps(pokemonType: string): string {
+    if (pokemonType) {
+      return pokemonType.toUpperCase();
+    } else return '';
+  }
 }

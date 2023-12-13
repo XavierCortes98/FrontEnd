@@ -3,7 +3,7 @@
   *ngIf="card"
 >
   <picture
-    class="d-flex justify-content-center w-100"
+    class="d-flex justify-content-center w-100 rounded"
     style="background-color: gray"
   >
     <img
@@ -13,9 +13,11 @@
       alt=""
     />
   </picture>
-  <p>{{ card.order }}</p>
-  <p>{{ card.name }}</p>
-  <div *ngFor="let item of card.types">
-    <p>{{ item.name }}</p>
+  <p class="number p-2">Nº. {{ getOrder(card.order) }}</p>
+  <h5 class="name">{{ getCaps(card.name) }}</h5>
+  <div class="d-flex +">
+    <p *ngFor="let item of card.types" class="d-flex p-3" [ngClass]="item.name">
+      {{ getCaps(item.name) }}
+    </p>
   </div>
 </div>

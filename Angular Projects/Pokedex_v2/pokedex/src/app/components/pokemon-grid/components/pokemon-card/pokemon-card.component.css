@@ -1,0 +1,22 @@
+.number {
+  display: flex;
+  align-self: flex-start;
+  color: var(--light-gray);
+  font-family: "Courier New", Courier, monospace;
+}
+
+.name {
+  font-family: "flexo-demi", arial, sans-serif;
+}
+
+.grass {
+  background-color: #9bcc50;
+}
+
+.poison {
+  background-color: purple;
+}
+
+.fire {
+  background-color: red;
+}
