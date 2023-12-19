@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { cardInfo } from '../../../../services/cardInfo/cardInfo.service';
-import { cardInfoModel } from '../../../../models/cardInfo.model';
+import { cardInfo } from 'src/app/services/cardInfo/cardInfo.service';
+import { cardInfoModel } from 'src/app/models/cardInfo.model';
 
 @Component({
   selector: 'app-pokemon-card',
